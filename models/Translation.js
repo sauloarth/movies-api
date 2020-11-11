@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 const schema = new mongoose.Schema({
-    movie: { type: mongoose.Schema.Types.ObjectId, ref: 'Movie' },
+    _id: { type: Number, alias: 'id' },
     translations: [{
         iso_3166_1: String,
         iso_639_1: String,
@@ -14,6 +14,6 @@ const schema = new mongoose.Schema({
         }
     }]
 
-});
+}, { _id: false });
 
 module.exports = mongoose.model('Translation', schema);
