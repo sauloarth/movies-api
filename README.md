@@ -14,6 +14,7 @@ Microservice to get data about movies an subtitles from TMDb Api (https://develo
 * clone from master or develop branch
 * setup a .env file instructions below
 * run docker-compose up -d from ./
+* run docker-compose run --rm test npm test -- --watchAl from ./tests to run tests
 
 ## Setting up a .env
 your .env file must to be at root path and contains:
@@ -23,3 +24,15 @@ your .env file must to be at root path and contains:
 * MONGO_PORT=27017
 * MONGO_DB=moviesdb (any name you want)
 * TMDB_API_KEY= xxxxxxx (get on the TMDb Api)
+
+## Endpoints
+
+* POST http://localhost/movie { movieId: Int } (fetch data from TMDb and save into database)
+
+* GET http://localhost/movie/{movieId} (fetch data about movie from api)
+
+* PUT http://localhost/movie { movieId: Int } (update data from TMDb and save into database)
+
+* GET http://localhost/movie/ (fetch data about ALL movies from api)
+
+
