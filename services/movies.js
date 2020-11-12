@@ -49,7 +49,6 @@ exports.getMoviesById = async (req, res) => {
         const result = await dao.getMovieById(movieId)
         return responses.sucess(res, result)
     } catch (error) {
-        console.log(error.message)
         if (error.status == 404)
             return responses.notFound(res, error.message);
 
